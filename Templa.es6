@@ -1,7 +1,7 @@
 class Templa extends BlazeComponent {
   onCreated() {
-    this.template = 'で、でた〜 $ 奴〜'
-    this.body = new ReactiveVar('bb');
+    this.template = this.data().template
+    this.body = new ReactiveVar('◯◯◯◯');
   }
 
   content() {
@@ -13,9 +13,17 @@ class Templa extends BlazeComponent {
     this.body.set(e.target.value)
   }
 
+  onSubmit(e){
+    e.preventDefault();
+    Post.insert({content:this.template.replace('$',this.body.get())})
+    e.target[0].value = ''
+    this.body.set('◯◯◯◯')
+  }
+
   events() {
     return [{
-      'keyup input': this.onChange
+      'keyup input': this.onChange,
+      'submit form': this.onSubmit
     }];
   }
 
