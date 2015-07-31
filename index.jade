@@ -1,7 +1,29 @@
 head
-  title OK
+  title てんぷら！ -テンプレで遊ぼう-
 body
-  +Templa(template='$、はじめました' desc='「冷やし中華、はじめました」的なノリで')
-  +Templa(template='$したいだけの人生だった' desc='ノッツさんの「そんな夏休みを過ごしたいだけの人生だった」')
-  +Templa(template='いつから$だと錯覚してた？' desc='「BLEACH』から。藍染惣右介')
-  +App
+  .text-center
+    h1 てんぷら！
+    h5
+      small テンプレで遊ぼう
+  .row
+    .col-md-6
+      .panel.panel-default
+        .panel-heading
+          p テンプレ一覧
+        .list-group
+          .list-group-item
+            +Templa(template='$、はじめました' desc='「冷やし中華、はじめました」的なノリで')
+          .list-group-item
+            +Templa(template='$したいだけの人生だった' desc='ノッツさんの「そんな夏休みを過ごしたいだけの人生だった」')
+          .list-group-item
+            +Templa(template='いつから$だと錯覚してた？' desc='「BLEACH』から。藍染惣右介')
+      a.twitter-share-button(href='https://twitter.com/share', data-via='endows_takashi') Tweet
+      script.
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
+    .col-md-6
+      .panel.panel-default
+        .panel-heading
+          p 投稿一覧
+        .list-group    
+          +App
