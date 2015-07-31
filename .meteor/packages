@@ -7,3 +7,8 @@
 meteor-platform
 autopublish
 insecure
+grigio:babel
+nemo64:bootstrap
+mquandalle:jade
+peerlibrary:blaze-components
+reactive-var
